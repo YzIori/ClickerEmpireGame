@@ -1,0 +1,33 @@
+env:
+  browser: true
+  es2021: true
+root: true
+extends:
+  - plugin:react/recommended
+  - standard-with-typescript
+  - plugin:react-hooks/recommended
+  - prettier
+overrides: []
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: latest
+  jsx: true
+  project: './tsconfig.json'
+  tsconfigRootDir: 'app'
+  sourceType: "module"
+plugins:
+  - react
+  - react-hooks
+  - '@typescript-eslint'
+  - testing-library
+rules: {
+    no-console: warn,
+    react/react-in-jsx-scope: off,
+    react-hooks/rules-of-hooks: error,
+    react-hooks/exhaustive-deps: off,
+    testing-library/await-async-query: error,
+		testing-library/no-await-sync-query: error,
+		testing-library/no-debugging-utils: warn,
+		testing-library/no-dom-import: off
+    # additionalHooks: '(useRecoilCallback|useRecoilTransaction_UNSTABLE)'
+  }

@@ -1,0 +1,11 @@
+version: "3"
+services:
+  frontend:
+    image: node:18.12.1
+    tty: true
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/usr/src/app:delegated
+    working_dir: /usr/src/app
+ 
