@@ -10,8 +10,9 @@ import type {
 const registerUser = async (
   req: ExtendedNextApiRequestUser,
   res: NextApiResponse<ResMessageType>
-): Promise<void> => {
+): Promise<any> => {
   try {
+    console.log(req.body)
     await connectDB()
     await UserModel.create(req.body)
     return res
@@ -20,7 +21,6 @@ const registerUser = async (
   } catch (error) {
     return res
       .status(400)
-
       .json({ message: 'ユーザー登録失敗' })
   }
 }

@@ -17,6 +17,7 @@ const loginUser = async (
 ): Promise<void> => {
   try {
     await connectDB()
+
     const savedUserData: SavedUserDataType | null =
       await UserModel.findOne({
         email: req.body.email
