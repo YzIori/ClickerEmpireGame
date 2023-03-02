@@ -8,4 +8,5 @@ services:
     volumes:
       - ./app:/usr/src/app:delegated
     working_dir: /usr/src/app
+    user: node
  
